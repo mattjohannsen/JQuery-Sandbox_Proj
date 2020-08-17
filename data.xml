@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<species>
+  <fish>
+    <name>Tarpon</name>
+    <image>tarpon.jpg</image>
+    <record>286 pounds</record>
+  </fish>
+  <fish>
+    <name>Snook</name>
+    <image>snook.jpg</image>
+    <record>53 pounds</record>
+  </fish>
+  <fish>
+    <name>Sailfish</name>
+    <image>sailfish.jpg</image>
+    <record>141 pounds</record>
+  </fish>
+  <fish>
+    <name>Striped Marlin</name>
+    <image>marlin-striped.jpg</image>
+    <record>494 pounds</record>
+  </fish>
+</species>

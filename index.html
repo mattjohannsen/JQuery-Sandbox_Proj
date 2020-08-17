@@ -1,13 +1,33 @@
 <!doctype html>
-
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>XML test</title>
-  <meta name="description" content="Matts XML test">
+  <title>Types of Fish</title>
   <link rel="stylesheet" href="css/styles.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $.ajax({
+        type: "GET",
+        url: "http://127.0.0.1:8887/JQuery-Sandbox/data.xml",
+        dataType: "xml",
+        success: xmlParser
+      });
+    });
+    
+    function xmlParser(xml){
+      $('#load').fadeOut();
+      $(xml).find("fish").each(function(){
+        $("#container").append('<div class="fish"><img src="images/' + $(this).find("image").text() + '" width="400" alt="' + $(this).find("name").text() + '"/><br/><div>' + $(this).find("name").text() + '<br/>' + $(this).find("record").text() + '</div></div>');
+        $("fish").fadeIn(1000);
+      });
+    }
+    </script>
 </head>
 <body>
-  <script src="js/scripts.js"></script>
+  <div>Types of Fish</div>
+  <div id="container">
+    <div class="loader"><img src="images/loading.gif" id="load" width="200" height="200" alt="loading..." /></div>
+  </div>
 </body>
 </html>
