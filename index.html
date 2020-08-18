@@ -18,16 +18,18 @@
     function xmlParser(xml){
       $('#load').fadeOut();
       $(xml).find("fish").each(function(){
-        $("#container").append('<div class="fish"><img src="images/' + $(this).find("image").text() + '" width="400" alt="' + $(this).find("name").text() + '"/><br/><div>' + $(this).find("name").text() + '<br/>' + $(this).find("record").text() + '</div></div>');
+        $("#container").append('<div class="gallery"><div class="title">' + $(this).find("name").text() + '</div><img src="images/' + $(this).find("image").text() + '" width="400" alt="' + $(this).find("name").text() + '"/><br/><div class="desc">World Record:<br/>' + $(this).find("record").text() + ' lbs.</div></div>');
         $("fish").fadeIn(1000);
       });
     }
     </script>
 </head>
 <body>
-  <div>Types of Fish</div>
-  <div id="container">
-    <div class="loader"><img src="images/loading.gif" id="load" width="200" height="200" alt="loading..." /></div>
+  <div class="center">
+    <div class="header">Gallery</div>
+    <div id="container">
+      <div class="loader"><img src="images/loading.gif" id="load" width="200" height="200" alt="loading..." /></div>
+    </div>
   </div>
 </body>
 </html>
